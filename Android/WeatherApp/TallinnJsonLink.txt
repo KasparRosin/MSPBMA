@@ -1,0 +1,1 @@
+http://api.openweathermap.org/data/2.5/forecast?q=Tallinn&APPID=294503193ad5ff89e94382e08c7a13b2&units=metric

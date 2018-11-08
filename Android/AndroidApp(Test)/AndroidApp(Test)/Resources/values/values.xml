@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="largeText">Large Text</string>
+	<string name="secondView">Second View</string>
+</resources>
