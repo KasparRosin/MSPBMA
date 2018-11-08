@@ -58,9 +58,8 @@ namespace CommentView
             view.FindViewById<TextView>(Resource.Id.LikeCount).Text = "LIKES: " + Items[position].Likes;
             view.FindViewById<ImageView>(Resource.Id.ProfilePicture).SetImageResource(ImageID);
             Like.Click += delegate
-            {
-                int currentLikes = Convert.ToInt32(Like.Text);
-                Like.Text += currentLikes++;
+            {                
+                int currentLikes = int.Parse(view.FindViewById<TextView>(Resource.Id.LikeCount).Text.ToString());
             };
 
 
