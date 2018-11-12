@@ -51,19 +51,27 @@ namespace CommentView
 
             int ImageID = (int)typeof(Resource.Drawable).GetField(Items[position].Image).GetValue(null);
             //Views
-            Button Like = view.FindViewById<Button>(Resource.Id.LikeButton);
+            
             view.FindViewById<TextView>(Resource.Id.UserName).Text = Items[position].UserName;
             view.FindViewById<TextView>(Resource.Id.PostDate).Text = (Items[position].Date).ToString();
             view.FindViewById<TextView>(Resource.Id.Comment).Text = Items[position].Comment;
             view.FindViewById<TextView>(Resource.Id.LikeCount).Text = "LIKES: " + Items[position].Likes;
             view.FindViewById<ImageView>(Resource.Id.ProfilePicture).SetImageResource(ImageID);
-            Like.Click += delegate
-            {                
-                int currentLikes = int.Parse(view.FindViewById<TextView>(Resource.Id.LikeCount).Text.ToString());
-            };
+            var Like = view.FindViewById<Button>(Resource.Id.LikeButton);
+            Like.Tag = position;
+            Like.Click -= Like_Click;
+            Like.Click += Like_Click;
 
 
             return view;
+        }               
+
+        void Like_Click(object sender, EventArgs e)
+        {
+            var clickLikeButton = (Button)sender;
+            int position = (int)clickLikeButton.Tag;
+            Items[position].Likes++;
+            NotifyDataSetChanged();
         }
     }
 }

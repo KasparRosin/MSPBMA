@@ -71,13 +71,13 @@
 			android:layout_gravity = "center"
 			android:gravity="center"
 			android:id="@+id/LikeCount"
-			android:layout_marginLeft="16.5dp" />
+			android:layout_marginLeft="8.0dp" />
 		<Button
 			android:text="COMMENT"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:id="@+id/CommentButton"
-			android:layout_marginLeft="79.5dp" />
+			android:layout_marginLeft="0.0dp" />
 	</LinearLayout>
 
 </LinearLayout>

@@ -17,11 +17,11 @@ namespace CommentView
         protected override void OnCreate(Bundle savedInstanceState)
         {
             SetContentView(Resource.Layout.activity_main);
-            List = FindViewById<ListView>(Resource.Id.ListView1);            
-            base.OnCreate(savedInstanceState);            
-            Comments.Add(new CommentProperties { UserName = "James", Image = "JamesBond", Comment = "Comment", Date = DateTime.Now.ToString()}); 
-            Comments.Add(new CommentProperties { UserName = "Elon Musk The Third", Image = "ElonMusk", Comment = "Custom Comment", Date = DateTime.Now.ToString()});            
-            List.Adapter = new CustomAdapter(this, Comments);           
+            base.OnCreate(savedInstanceState);
+            List = FindViewById<ListView>(Resource.Id.ListView1);  
+            Comments.Add(new CommentProperties { UserName = "James", Image = "JamesBond", Comment = "An Idea?", Date = DateTime.Now.ToString()}); 
+            Comments.Add(new CommentProperties { UserName = "Elon Musk", Image = "ElonMusk", Comment = "a Joke", Date = DateTime.Now.ToString()});            
+            List.Adapter = new CustomAdapter(this, Comments);
         }      
     }
 }
