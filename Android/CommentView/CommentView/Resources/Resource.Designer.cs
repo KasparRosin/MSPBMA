@@ -2528,6 +2528,9 @@ namespace CommentView
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
+			// aapt resource value: 0x7f08008e
+			public const int editText = 2131230862;
+			
 			// aapt resource value: 0x7f08007e
 			public const int edit_query = 2131230846;
 			
@@ -2818,9 +2821,6 @@ namespace CommentView
 			
 			// aapt resource value: 0x7f08001b
 			public const int text2 = 2131230747;
-			
-			// aapt resource value: 0x7f08008e
-			public const int textInputEditText1 = 2131230862;
 			
 			// aapt resource value: 0x7f08006a
 			public const int textSpacerNoButtons = 2131230826;

@@ -66,7 +66,7 @@ namespace CommentView
             return view;
         }               
 
-        void Like_Click(object sender, EventArgs e)
+        private void Like_Click(object sender, EventArgs e)
         {
             var clickLikeButton = (Button)sender;
             int position = (int)clickLikeButton.Tag;

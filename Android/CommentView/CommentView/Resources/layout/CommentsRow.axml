@@ -9,20 +9,20 @@
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
-		android:layout_height="81.5dp"
+		android:layout_height="85.5dp"
 		android:id="@+id/linearLayout1">
 		<ImageView
 			android:src="@android:drawable/ic_menu_gallery"
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
+			android:layout_width="91.0dp"
+			android:layout_height="81.5dp"
 			android:id="@+id/imageView1" />
-
-		<android.support.design.widget.TextInputEditText
-			android:layout_width="284.5dp"
-			android:layout_height="36.0dp"
-			android:id="@+id/textInputEditText1"
-			android:layout_marginTop="17.5dp" />
-
+		<TextView
+			android:text="Text"
+			android:layout_width="228.0dp"
+			android:layout_height="58.5dp"
+			android:layout_gravity ="center_vertical"
+			android:id="@+id/editText"
+			android:layout_marginLeft="34.0dp" />
 	</LinearLayout>
 
 </LinearLayout>
