@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
 	android:layout_margin="20px">
 	<LinearLayout
 		android:orientation="horizontal"
@@ -16,13 +17,36 @@
 			android:layout_width="91.0dp"
 			android:layout_height="81.5dp"
 			android:id="@+id/imageView1" />
-		<TextView
-			android:text="Text"
-			android:layout_width="228.0dp"
-			android:layout_height="58.5dp"
-			android:layout_gravity ="center_vertical"
+		<EditText
+			android:text=""
+			android:layout_width="262.0dp"
+			android:layout_height="match_parent"
 			android:id="@+id/editText"
-			android:layout_marginLeft="34.0dp" />
+		    android:maxLength="60"/>
+
 	</LinearLayout>
+	<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout2" >
+
+		<TextView
+		android:text="character limit is 60"
+		android:gravity = "center"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView1" 
+		android:textColor = "@android:color/holo_red_dark"/>
+	</LinearLayout>
+	<ListView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/ListViewComment"  />
 
 </LinearLayout>

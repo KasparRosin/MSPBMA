@@ -57,7 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommentActivity.cs" />
+    <Compile Include="SingleCommentProperties.cs" />
     <Compile Include="CommentProperties.cs" />
+    <Compile Include="CommentViewAdapter.cs" />
     <Compile Include="CustomAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -110,6 +112,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\CommentsRow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\CommentListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

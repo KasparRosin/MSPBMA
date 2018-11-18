@@ -58,20 +58,33 @@ namespace CommentView
             view.FindViewById<TextView>(Resource.Id.LikeCount).Text = "LIKES: " + Items[position].Likes;
             view.FindViewById<ImageView>(Resource.Id.ProfilePicture).SetImageResource(ImageID);
             var Like = view.FindViewById<Button>(Resource.Id.LikeButton);
+            var Comment = view.FindViewById<Button>(Resource.Id.CommentButton);
+            Comment.Tag = position;
             Like.Tag = position;
             Like.Click -= Like_Click;
-            Like.Click += Like_Click;
+            Like.Click += Like_Click;            
+            Comment.Click += Comment_Click;
+
 
 
             return view;
-        }               
+        }
+
+        private void Comment_Click(object sender, EventArgs e)
+        {            
+            var clickCommentButton = (Button)sender;
+            int position = (int)clickCommentButton.Tag;
+            Intent intent = new Intent(Context, typeof(CommentActivity));
+            intent.PutExtra("CommentPosition", position);
+            Context.StartActivity(intent);
+        }
 
         private void Like_Click(object sender, EventArgs e)
         {
             var clickLikeButton = (Button)sender;
             int position = (int)clickLikeButton.Tag;
             Items[position].Likes++;
-            NotifyDataSetChanged();
+            NotifyDataSetChanged();         
         }
     }
 }

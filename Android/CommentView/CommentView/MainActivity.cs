@@ -13,17 +13,12 @@ namespace CommentView
     public class MainActivity : Activity    
     {
         public int Count = 0;
-        static List<CommentProperties> Comments = new List<CommentProperties>();
+        public static List<CommentProperties> Comments = new List<CommentProperties>();
         ListView List;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             SetContentView(Resource.Layout.activity_main);
             base.OnCreate(savedInstanceState);
-
-
-            StartActivity(typeof(CommentActivity));            
-
-
             List = FindViewById<ListView>(Resource.Id.ListView1);
             string dateFormat = "dd/MM/yyyy HH:mm:ss";
             Comments.Add(new CommentProperties { UserName = "James", Image = "JamesBond", Comment = "An Idea?", Date = DateTime.Now.ToString(dateFormat)}); 
