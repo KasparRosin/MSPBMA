@@ -11,13 +11,11 @@ namespace CommentView
     {           
         readonly CommentActivity commentActivity;
         readonly List<SingleCommentProperties> singleComments;
-        readonly int PostOwnerInt;
 
         public CommentViewAdapter(CommentActivity commentActivity, List<SingleCommentProperties> singleComments) : base()
         {
             this.commentActivity = commentActivity;
             this.singleComments = singleComments;
-            PostOwnerInt = commentActivity.PostOwnerInt;
         }
 
         public override SingleCommentProperties this[int position]
@@ -44,21 +42,14 @@ namespace CommentView
                 view = commentActivity.LayoutInflater.Inflate(Resource.Layout.CommentListView, null);
 
            
-            int ImageID = (int)typeof(Resource.Drawable).GetField(singleComments[position].Image).GetValue(null);
+            int ImageID = (int)typeof(Resource.Drawable).GetField(SelectedComments.Comments[position].Image).GetValue(null);
 
-            //View            
-
-            if (singleComments[position].PostOwner == PostOwnerInt)
-            {
-                view.FindViewById<ImageView>(Resource.Id.ProfilePicture).SetImageResource(ImageID);
-                view.FindViewById<TextView>(Resource.Id.PostDate).Text = (singleComments[position].Date).ToString();
-                view.FindViewById<TextView>(Resource.Id.UserName).Text = singleComments[position].UserName;
-                view.FindViewById<TextView>(Resource.Id.Comment).Text = singleComments[position].SingleComment;
-                return view;
-
-            }            
-            
-            return view;  
+            //View                   
+            view.FindViewById<ImageView>(Resource.Id.ProfilePicture).SetImageResource(ImageID);
+            view.FindViewById<TextView>(Resource.Id.PostDate).Text = (SelectedComments.Comments[position].Date).ToString();
+            view.FindViewById<TextView>(Resource.Id.UserName).Text = SelectedComments.Comments[position].UserName;
+            view.FindViewById<TextView>(Resource.Id.Comment).Text = SelectedComments.Comments[position].SingleComment;
+            return view;        
             
         }
     }

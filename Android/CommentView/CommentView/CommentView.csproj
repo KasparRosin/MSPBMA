@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommentActivity.cs" />
+    <Compile Include="SelectedComments.cs" />
     <Compile Include="SingleCommentProperties.cs" />
     <Compile Include="CommentProperties.cs" />
     <Compile Include="CommentViewAdapter.cs" />
@@ -119,6 +120,9 @@
     <AndroidResource Include="Resources\layout\CommentListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\BlankProfile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

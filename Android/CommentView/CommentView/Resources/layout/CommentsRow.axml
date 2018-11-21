@@ -17,30 +17,52 @@
 			android:layout_width="91.0dp"
 			android:layout_height="81.5dp"
 			android:id="@+id/imageView1" />
-		<EditText
-			android:text=""
-			android:layout_width="262.0dp"
+		<RelativeLayout
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="268.0dp"
 			android:layout_height="match_parent"
-			android:id="@+id/editText"
-		    android:maxLength="60"/>
-
+			android:id="@+id/relativeLayout1" >
+			<EditText			
+				android:text= "Username"				
+				android:layout_width="261.0dp"
+				android:layout_height="34.5dp"
+				android:id="@+id/editText"
+				android:maxLength="60"
+				android:background="@null"
+				android:textSize="15dp"/>
+			<EditText
+				android:text="Comment"
+				android:background="@null"
+				android:layout_width="275.5dp"
+				android:layout_height="51.0dp"
+				android:layout_below="@id/editText"
+				android:id="@+id/CommentEditText"
+				android:textSize="15dp" />
+		</RelativeLayout>		
 	</LinearLayout>
 	<LinearLayout
 		android:orientation="horizontal"
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/linearLayout2" >
-
+		android:layout_height="51.5dp"
+		android:id="@+id/linearLayout2">
+		<Button
+			android:text="BACK"
+			android:layout_width="73.5dp"
+			android:layout_height="match_parent"
+			android:id="@+id/BackButton"
+			android:layout_marginLeft="8.5dp" />
 		<TextView
-		android:text="character limit is 60"
-		android:gravity = "center"
-		android:textAppearance="?android:attr/textAppearanceSmall"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView1" 
-		android:textColor = "@android:color/holo_red_dark"/>
+			android:text="character limit is 60"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="128.5dp"
+			android:layout_height="20.5dp"
+			android:id="@+id/textView1"
+			android:textColor = "@android:color/holo_red_dark"
+			android:layout_marginLeft="82.0dp"
+			android:layout_marginBottom="0.0dp" />
 	</LinearLayout>
 	<ListView
 		android:minWidth="25px"
@@ -48,5 +70,4 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:id="@+id/ListViewComment"  />
-
 </LinearLayout>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CommentView
 {
@@ -14,6 +15,7 @@ namespace CommentView
         public string Comment { get; set; } = "No Comment";
 
         public int Likes { get; set; }
+        public List<SingleCommentProperties> PostComments { get; set; }
 
     }
 }
