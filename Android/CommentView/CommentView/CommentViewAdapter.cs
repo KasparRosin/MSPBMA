@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Android.App;
 using Android.Views;
 using Android.Widget;
+using static Android.Resource;
 
 namespace CommentView
 {
@@ -43,14 +44,16 @@ namespace CommentView
 
            
             int ImageID = (int)typeof(Resource.Drawable).GetField(SelectedComments.Comments[position].Image).GetValue(null);
+            int ImageID2 = (int)typeof(Resource.Drawable).GetField("BlankProfile").GetValue(null);
 
-            //View                   
+            //View          
             view.FindViewById<ImageView>(Resource.Id.ProfilePicture).SetImageResource(ImageID);
             view.FindViewById<TextView>(Resource.Id.PostDate).Text = (SelectedComments.Comments[position].Date).ToString();
             view.FindViewById<TextView>(Resource.Id.UserName).Text = SelectedComments.Comments[position].UserName;
-            view.FindViewById<TextView>(Resource.Id.Comment).Text = SelectedComments.Comments[position].SingleComment;
+            view.FindViewById<TextView>(Resource.Id.Comment).Text = SelectedComments.Comments[position].SingleComment;           
+
             return view;        
             
-        }
+        }       
     }
 }
