@@ -29,7 +29,7 @@
 				android:layout_width="261.0dp"
 				android:layout_height="34.5dp"
 				android:id="@+id/editText"
-				android:maxLength="60"
+				android:maxLength="25"
 				android:inputType="textMultiLine|textVisiblePassword"
 				android:background="@null"
 				android:textSize="15dp"
@@ -41,6 +41,7 @@
 				android:layout_height="51.0dp"
 				android:inputType="textMultiLine|textVisiblePassword"
 				android:layout_below="@id/editText"
+				android:maxLength="60"
 				android:id="@+id/CommentEditText"
 				android:textSize="15dp"
 				android:layout_marginLeft="22.0dp" />
