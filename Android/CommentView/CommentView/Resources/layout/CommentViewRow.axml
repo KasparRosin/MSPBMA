@@ -47,6 +47,7 @@
 			android:layout_width="352.7dp"
 			android:layout_height="69.5dp"
 			android:layout_margin = "10px"
+			android:textSize = "10dp"
 			android:id="@+id/Comment"
 			android:layout_marginTop="1.0dp" />
 	</LinearLayout>

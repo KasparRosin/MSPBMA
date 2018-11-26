@@ -18,10 +18,18 @@ namespace CommentView
         protected override void OnCreate(Bundle savedInstanceState)
         {
             SetContentView(Resource.Layout.activity_main);
-            base.OnCreate(savedInstanceState);
-            List = FindViewById<ListView>(Resource.Id.ListView1);                   
-            List.Adapter = new CustomAdapter(this, GetPostProperties());
-        }      
+            base.OnCreate(savedInstanceState);  
+            
+            var dbService = new dbService();
+            dbService.CreateDatabase();
+            //dbService.CreateTable();
+
+            var Comments = dbService.GetAllPosts();
+            List = FindViewById<ListView>(Resource.Id.PostsListView);
+            List.Adapter = new CustomAdapterdb(this, Comments.ToList()); 
+            //List.Adapter = new CustomAdapter(this, GetPostProperties());
+        }
+        
 
         public List<CommentProperties> GetPostProperties()
         {

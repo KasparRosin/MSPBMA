@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using SQLite;
-
+    
 namespace dbExample
 {
     public class dbService

@@ -2363,9 +2363,6 @@ namespace CommentView
 			// aapt resource value: 0x7f08009c
 			public const int LikeCount = 2131230876;
 			
-			// aapt resource value: 0x7f08008b
-			public const int ListView1 = 2131230859;
-			
 			// aapt resource value: 0x7f080099
 			public const int ListViewComment = 2131230873;
 			
@@ -2374,6 +2371,9 @@ namespace CommentView
 			
 			// aapt resource value: 0x7f08008f
 			public const int PostDate = 2131230863;
+			
+			// aapt resource value: 0x7f08008b
+			public const int PostsListView = 2131230859;
 			
 			// aapt resource value: 0x7f080092
 			public const int ProfileImage = 2131230866;

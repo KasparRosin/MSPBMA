@@ -10,5 +10,5 @@
 		android:minHeight="25px"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:id="@+id/ListView1" />
+		android:id="@+id/PostsListView" />
 </RelativeLayout>
