@@ -2336,23 +2336,23 @@ namespace CommentView
 			// aapt resource value: 0x7f080032
 			public const int ALT = 2131230770;
 			
-			// aapt resource value: 0x7f080096
-			public const int BackButton = 2131230870;
+			// aapt resource value: 0x7f080098
+			public const int BackButton = 2131230872;
 			
 			// aapt resource value: 0x7f080033
 			public const int CTRL = 2131230771;
 			
-			// aapt resource value: 0x7f080098
-			public const int CharacterLimit = 2131230872;
+			// aapt resource value: 0x7f080092
+			public const int CharacterLimit = 2131230866;
 			
-			// aapt resource value: 0x7f080091
-			public const int Comment = 2131230865;
+			// aapt resource value: 0x7f080097
+			public const int Comment = 2131230871;
 			
 			// aapt resource value: 0x7f08009d
 			public const int CommentButton = 2131230877;
 			
-			// aapt resource value: 0x7f080095
-			public const int CommentEditText = 2131230869;
+			// aapt resource value: 0x7f08008f
+			public const int CommentEditText = 2131230863;
 			
 			// aapt resource value: 0x7f080034
 			public const int FUNCTION = 2131230772;
@@ -2369,17 +2369,17 @@ namespace CommentView
 			// aapt resource value: 0x7f080035
 			public const int META = 2131230773;
 			
-			// aapt resource value: 0x7f08008f
-			public const int PostDate = 2131230863;
+			// aapt resource value: 0x7f080096
+			public const int PostDate = 2131230870;
 			
-			// aapt resource value: 0x7f08008b
-			public const int PostsListView = 2131230859;
+			// aapt resource value: 0x7f080093
+			public const int PostsListView = 2131230867;
 			
-			// aapt resource value: 0x7f080092
-			public const int ProfileImage = 2131230866;
+			// aapt resource value: 0x7f08008c
+			public const int ProfileImage = 2131230860;
 			
-			// aapt resource value: 0x7f08008d
-			public const int ProfilePicture = 2131230861;
+			// aapt resource value: 0x7f080094
+			public const int ProfilePicture = 2131230868;
 			
 			// aapt resource value: 0x7f080036
 			public const int SHIFT = 2131230774;
@@ -2387,11 +2387,11 @@ namespace CommentView
 			// aapt resource value: 0x7f080037
 			public const int SYM = 2131230775;
 			
-			// aapt resource value: 0x7f080097
-			public const int SaveButton = 2131230871;
+			// aapt resource value: 0x7f080091
+			public const int SaveButton = 2131230865;
 			
-			// aapt resource value: 0x7f08008e
-			public const int UserName = 2131230862;
+			// aapt resource value: 0x7f080095
+			public const int UserName = 2131230869;
 			
 			// aapt resource value: 0x7f0800af
 			public const int action0 = 2131230895;
@@ -2549,8 +2549,8 @@ namespace CommentView
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
-			// aapt resource value: 0x7f080094
-			public const int editText = 2131230868;
+			// aapt resource value: 0x7f08008e
+			public const int editText = 2131230862;
 			
 			// aapt resource value: 0x7f08007e
 			public const int edit_query = 2131230846;
@@ -2633,8 +2633,8 @@ namespace CommentView
 			// aapt resource value: 0x7f080018
 			public const int line3 = 2131230744;
 			
-			// aapt resource value: 0x7f08008c
-			public const int linearLayout1 = 2131230860;
+			// aapt resource value: 0x7f08008b
+			public const int linearLayout1 = 2131230859;
 			
 			// aapt resource value: 0x7f080090
 			public const int linearLayout2 = 2131230864;
@@ -2708,8 +2708,8 @@ namespace CommentView
 			// aapt resource value: 0x7f080075
 			public const int radio = 2131230837;
 			
-			// aapt resource value: 0x7f080093
-			public const int relativeLayout1 = 2131230867;
+			// aapt resource value: 0x7f08008d
+			public const int relativeLayout1 = 2131230861;
 			
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;

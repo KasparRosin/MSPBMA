@@ -7,20 +7,19 @@ namespace CommentView
 {
     public class dbService
     {
-        string DateFormat = "dd/MM/yyyy HH:mm:ss";
+        readonly string DateFormat = "dd/MM/yyyy HH:mm:ss";
         SQLiteConnection db;
         public void CreateDatabase()
         {
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "db.db3");
-            db = new SQLiteConnection(dbPath);           
-            CreateTable();
+            db = new SQLiteConnection(dbPath);
+            db.DeleteAll<CommentPropertiesdb>();
+            CreateTable();            
         }
 
         public void CreateTable()
         {
-           // db.CreateTable<SingleCommentPropertiesdb>();
             db.CreateTable<CommentPropertiesdb>();
-            //var newComment = new  SingleCommentPropertiesdb();
             var newPost = new CommentPropertiesdb();
             if (db.Table<CommentPropertiesdb>().Count() == 0)
             {
@@ -29,27 +28,8 @@ namespace CommentView
                 newPost.Likes = 10;
                 newPost.Image = "JamesBond";
                 newPost.Date = DateTime.Now.ToString(DateFormat);
-                newPost.Comment = "“You only live twice: Once when you are born And once when you look death in the face” - Myself (James Bond)";
-                newPost.PostComments = new List<SingleCommentProperties>
-                {
-                    new SingleCommentProperties
-                    {
-                        UserName = "James Bond Fan",
-                        Date = DateTime.Now.ToString(DateFormat),
-                        Image = "JamesBond",
-                        SingleComment = "Nice quote"
-                    }
-                };
+                newPost.Comment = "“You only live twice: Once when you are born And once when you look death in the face” - Myself (James Bond)";         
                 db.Insert(newPost);
-
-
-                //<! --- COMMENT ---!>
-                //newComment.Date = DateTime.Now.ToString();
-                //newComment.SingleComment = "Nice quote";
-                //newComment.Image = "JamesBond";
-                //newComment.UserName = "James Bond Fan";
-                //db.Insert(newComment);
-
 
                 //<! --- POST ---!>
                 newPost.UserName = "Elon";
@@ -57,38 +37,24 @@ namespace CommentView
                 newPost.Image = "ElonMusk";
                 newPost.Date = DateTime.Now.ToString(DateFormat);
                 newPost.Comment = "Used to live in Silicon Valley, now I live in Silicone Valley";
-                newPost.PostComments = new List<SingleCommentProperties>
-                {
-                    new SingleCommentProperties
-                    {
-                        UserName = "Anon",
-                        Date = DateTime.Now.ToString(DateFormat),
-                        Image = "BlankProfile",
-                        SingleComment = "Used to live in a House, now I live in a Bigger House"
-                    }
-                };
                 db.Insert(newPost);
-
-
-                //<! --- COMMENT ---!>
-                //newComment.Date = DateTime.Now.ToString();
-                //newComment.SingleComment = "Used to live in a House, now I live in a Bigger House";
-                //newComment.Image = "BlankProfile";
-                //newComment.UserName = "Anon";
-                //db.Insert(newComment);
-
             };
+        }
+
+        public void AddPost( CommentPropertiesdb Post )
+        {            
+            var newPost = new CommentPropertiesdb();
+            newPost.UserName = Post.UserName.ToString();
+            newPost.Comment = Post.Comment.ToString();
+            newPost.Date = Post.Date.ToString();
+            newPost.Image = Post.Image.ToString();
+            newPost.Likes = Post.Likes;
+            db.Insert(newPost);
         }
 
         public TableQuery<CommentPropertiesdb> GetAllPosts()
         {
             var Table = db.Table<CommentPropertiesdb>();
-            return Table;
-        }
-
-        public TableQuery<SingleCommentPropertiesdb> GetComments()
-        {
-            var Table = db.Table<SingleCommentPropertiesdb>();
             return Table;
         }
     }

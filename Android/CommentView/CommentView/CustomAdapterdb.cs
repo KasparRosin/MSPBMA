@@ -64,18 +64,15 @@ namespace CommentView
             Like.Click -= Like_Click;
             Like.Click += Like_Click;            
             Comment.Click += Comment_Click;
-
-
-
             return view;
         }
 
         private void Comment_Click(object sender, EventArgs e)
         {
-            var clickCommentButton = (Button)sender;
-            int position = (int)clickCommentButton.Tag;
+            //var clickCommentButton = (Button)sender;
+            //int position = (int)clickCommentButton.Tag;
             //SelectedComments.Comments = Items[position].PostComments;
-            Context.StartActivity(typeof(CommentActivity));
+            //Context.StartActivity(typeof(CommentActivity));
         }
 
         private void Like_Click(object sender, EventArgs e)

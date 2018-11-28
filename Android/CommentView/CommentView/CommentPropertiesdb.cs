@@ -15,9 +15,11 @@ namespace CommentView
 {
     public class CommentPropertiesdb
     {
-        public string Image { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
+        public string Image { get; set; }        
         
-        [PrimaryKey, NotNull]
         public string UserName { get; set; } = "Invalid Username";
 
         public string Date { get; set; } = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
@@ -25,8 +27,6 @@ namespace CommentView
         public string Comment { get; set; } = "No Comment";
 
         public int Likes { get; set; }
-        [Ignore]
-        public List<SingleCommentProperties> PostComments { get; set; }
 
     }
 }
