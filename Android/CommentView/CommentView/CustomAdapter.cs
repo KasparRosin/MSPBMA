@@ -58,7 +58,7 @@ namespace CommentView
             view.FindViewById<TextView>(Resource.Id.LikeCount).Text = "LIKES: " + Items[position].Likes;
             view.FindViewById<ImageView>(Resource.Id.ProfilePicture).SetImageResource(ImageID);
             var Like = view.FindViewById<Button>(Resource.Id.LikeButton);
-            var Comment = view.FindViewById<Button>(Resource.Id.CommentButton);            
+            var Comment = view.FindViewById<Button>(Resource.Id.DeleteButton);            
             Like.Tag = position;
             Comment.Tag = position;
             Like.Click -= Like_Click;

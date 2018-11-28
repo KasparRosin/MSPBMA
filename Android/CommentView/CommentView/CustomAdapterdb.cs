@@ -17,7 +17,7 @@ namespace CommentView
 {
     public class CustomAdapterdb : BaseAdapter<CommentPropertiesdb>
     {
-        readonly List<CommentPropertiesdb> Items;
+        List<CommentPropertiesdb> Items;
         readonly Activity Context;
 
         public CustomAdapterdb(Activity Context, List<CommentPropertiesdb> Items) : base()
@@ -58,21 +58,24 @@ namespace CommentView
             view.FindViewById<TextView>(Resource.Id.LikeCount).Text = "LIKES: " + Items[position].Likes;
             view.FindViewById<ImageView>(Resource.Id.ProfilePicture).SetImageResource(ImageID);
             var Like = view.FindViewById<Button>(Resource.Id.LikeButton);
-            var Comment = view.FindViewById<Button>(Resource.Id.CommentButton);            
+            var DeleteButton = view.FindViewById<Button>(Resource.Id.DeleteButton);            
             Like.Tag = position;
-            Comment.Tag = position;
+            DeleteButton.Tag = position;
             Like.Click -= Like_Click;
             Like.Click += Like_Click;            
-            Comment.Click += Comment_Click;
+            DeleteButton.Click += Delete_Click;
             return view;
         }
 
-        private void Comment_Click(object sender, EventArgs e)
+        private void Delete_Click( object sender, EventArgs e )
         {
-            //var clickCommentButton = (Button)sender;
-            //int position = (int)clickCommentButton.Tag;
-            //SelectedComments.Comments = Items[position].PostComments;
-            //Context.StartActivity(typeof(CommentActivity));
+            var clickDeleteButton = (Button)sender;
+            int position = (int)clickDeleteButton.Tag;
+            CommentPropertiesdb PostToDelete = Items[position];
+            dbService db = new dbService();
+            db.DeletePost(PostToDelete);
+            this.Items = db.GetAllPosts().ToList();
+            NotifyDataSetChanged();
         }
 
         private void Like_Click(object sender, EventArgs e)

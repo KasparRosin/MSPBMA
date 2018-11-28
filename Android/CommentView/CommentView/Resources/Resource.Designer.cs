@@ -2348,11 +2348,11 @@ namespace CommentView
 			// aapt resource value: 0x7f080097
 			public const int Comment = 2131230871;
 			
-			// aapt resource value: 0x7f08009d
-			public const int CommentButton = 2131230877;
-			
 			// aapt resource value: 0x7f08008f
 			public const int CommentEditText = 2131230863;
+			
+			// aapt resource value: 0x7f08009d
+			public const int DeleteButton = 2131230877;
 			
 			// aapt resource value: 0x7f080034
 			public const int FUNCTION = 2131230772;

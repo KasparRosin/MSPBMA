@@ -74,10 +74,10 @@
 			android:id="@+id/LikeCount"
 			android:layout_marginLeft="8.0dp" />
 		<Button
-			android:text="COMMENT"
+			android:text="Delete"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:id="@+id/CommentButton"
+			android:id="@+id/DeleteButton"
 			android:layout_marginLeft="0.0dp" />
 	</LinearLayout>
 

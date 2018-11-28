@@ -2,6 +2,7 @@
 using SQLite;
 using System.IO;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CommentView
 {
@@ -12,8 +13,7 @@ namespace CommentView
         public void CreateDatabase()
         {
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "db.db3");
-            db = new SQLiteConnection(dbPath);
-            db.DeleteAll<CommentPropertiesdb>();
+            db = new SQLiteConnection(dbPath);  
             CreateTable();            
         }
 
@@ -41,15 +41,15 @@ namespace CommentView
             };
         }
 
+        public void DeletePost( CommentPropertiesdb Post2Delete )
+        {
+           CreateDatabase();
+           db.Delete<CommentPropertiesdb>(Post2Delete.Id);
+        }
+
         public void AddPost( CommentPropertiesdb Post )
-        {            
-            var newPost = new CommentPropertiesdb();
-            newPost.UserName = Post.UserName.ToString();
-            newPost.Comment = Post.Comment.ToString();
-            newPost.Date = Post.Date.ToString();
-            newPost.Image = Post.Image.ToString();
-            newPost.Likes = Post.Likes;
-            db.Insert(newPost);
+        {           
+            db.Insert(Post);
         }
 
         public TableQuery<CommentPropertiesdb> GetAllPosts()

@@ -23,6 +23,9 @@ namespace CommentView
             SetContentView(Resource.Layout.activity_main);
             base.OnCreate(savedInstanceState);
 
+            DeleteDatabase("db.db3");
+            DeleteDatabase("db.db");
+
             FindViewById<ImageView>(Resource.Id.ProfileImage).SetImageResource(Resource.Drawable.BlankProfile);
             SelectedImage = "BlankProfile";
 
