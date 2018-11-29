@@ -3,4 +3,10 @@
   <item>
     <color android:color="@color/SplashBackground"/>
   </item>
+<item>
+    <bitmap
+      android:src="@drawable/JokerLogo"
+      android:tileMode="disabled"
+      android:gravity ="center"/>
+  </item>
 </layer-list>
