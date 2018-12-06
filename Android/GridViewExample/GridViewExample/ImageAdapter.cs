@@ -1,16 +1,23 @@
 ﻿using Android.Content;
+using Android.Graphics;
 using Android.Views;
 using Android.Widget;
+using Java.Net;
+using System;
+using System.Collections.Generic;
+using System.Net;
 
 namespace GridViewExample
 {
     internal class ImageAdapter : BaseAdapter
     {
-        Context context;
+        readonly Context context;
+        readonly List<PhotoData> Photos;
 
-        public ImageAdapter(Context c)
+        public ImageAdapter(Context c, List<PhotoData> Photos)
         {
-            context = c;
+            this.Photos = Photos;
+            this.context = c;
         }
 
         public override int Count
@@ -35,8 +42,10 @@ namespace GridViewExample
 
             if (convertView == null)
             {  // if it's not recycled, initialize some attributes
-                imageView = new ImageView(context);
-                imageView.LayoutParameters = new GridView.LayoutParams(85, 85);
+                imageView = new ImageView(context)
+                {
+                    LayoutParameters = new GridView.LayoutParams(85, 85)
+                };
                 imageView.SetScaleType(ImageView.ScaleType.CenterCrop);
                 imageView.SetPadding(8, 8, 8, 8);
             }
@@ -45,9 +54,28 @@ namespace GridViewExample
                 imageView = (ImageView)convertView;
             }
 
-            imageView.SetImageResource(thumbIds[position]);
+            var imageBitmap = GetImageBitmapFromUrl(Photos[position].url);
+            imageView.SetImageBitmap(imageBitmap);
             return imageView;
         }
+
+        private Bitmap GetImageBitmapFromUrl(string url)
+        {
+    
+            Bitmap imageBitmap = null;
+
+            using (var webClient = new WebClient())
+            {
+                var imageBytes = webClient.DownloadData(url);
+                if (imageBytes != null && imageBytes.Length > 0)
+                {
+                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                }
+            }
+
+            return imageBitmap;
+        }
+
 
         // references to our images
         int[] thumbIds = 
